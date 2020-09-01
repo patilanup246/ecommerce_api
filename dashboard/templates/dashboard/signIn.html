@@ -1,0 +1,65 @@
+{% extends 'dashboard/naviGation.html' %}
+{% load static %}
+{% block content %}
+
+<div class="page-head_agile_info_w3l">
+
+</div>
+
+<div class="services-breadcrumb">
+		<div class="agile_inner_breadcrumb">
+			<div class="container">
+				<ul class="w3_short">
+					<li>
+						<a href="{% url 'VendorDashboard' %}">Home</a>
+						<i>|</i>
+					</li>
+					<li>Sign In</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	<!-- //page -->
+	<!-- contact page -->
+	<div class="contact-w3l">
+		<div class="container">
+			<!-- tittle heading -->
+			<h3 class="tittle-w3l">Sign In
+				<span class="heading-style">
+					<i></i>
+					<i></i>
+					<i></i>
+				</span>
+			</h3>
+			<!-- //tittle heading -->
+			<!-- contact -->
+			<div class="contact agileits">
+				<div class="contact-agileinfo">
+					<div class="contact-form wthree">
+
+						{% if errStatus == 'something wrong' %}
+						<p style="color:red">
+							{{messages}}
+						</p>
+						{% endif %}
+						<form action="#" method="post">
+							{% csrf_token %}
+
+							<div class="">
+								<input  type="email" name="Email" placeholder="Email" required="">
+							</div>
+
+							<div class="">
+								<input type="text" placeholder="Password" name="password"  required="">
+							</div>
+
+							<input type="submit" value="Submit">
+						</form>
+					</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+{% endblock content %}

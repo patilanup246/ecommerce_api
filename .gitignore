@@ -1,0 +1,9 @@
+app.yaml.bakj
+app.yaml.bak
+cloud_sql_proxy.exe
+*.pyc
+Dockerfile
+start.sh
+main.py
+dataviv-ecommerce-8742e62f35ce.json
+settings.py

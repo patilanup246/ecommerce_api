@@ -1,0 +1,94 @@
+{% extends 'dashboard/naviGation.html' %}
+{% load static %}
+{% block content %}
+
+<div class="page-head_agile_info_w3l">
+
+</div>
+
+<div class="services-breadcrumb">
+		<div class="agile_inner_breadcrumb">
+			<div class="container">
+				<ul class="w3_short">
+					<li>
+						<a href="{% url 'VendorDashboard' %}">Home</a>
+						<i>|</i>
+					</li>
+					<li>Stock Details</li>
+                    <li>
+                        <i>|</i>
+						<a href="{% url 'VendorVendorStockView' %}">Add Stock</a>
+						<i>|</i>
+					</li>
+                    <li>
+
+						<a href="{% url 'VendorProductsView' %}">Add Product</a>
+						<i>|</i>
+					</li>
+                    <li>
+
+						<a href="{% url 'VendorProductCategoryView' %}">Add Category</a>
+						<i>|</i>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	<!-- //page -->
+	<!-- contact page -->
+	<div class="contact-w3l">
+		<div class="container">
+			<!-- tittle heading -->
+			<h3 class="tittle-w3l">Stock Details
+				<span class="heading-style">
+					<i></i>
+					<i></i>
+					<i></i>
+				</span>
+			</h3>
+			<!-- //tittle heading -->
+			<!-- contact -->
+			<div class="contact agileits">
+				<div class="contact-agileinfo">
+					<div class="contact-form wthree">
+
+
+                        <div class="row">
+                            <div class="col-md">
+                                <div class="card card-body">
+                                    <table class="table table-sm">
+                                        <tr>
+                                            <th>Product</th>
+                                            <th>Category</th>
+                                            <th>Quantity</th>
+                                            <th>Price</th>
+                                            <th>Selling_price</th>
+
+<!--                                            <th>Update</th>-->
+<!--                                            <th>Remove</th>-->
+                                        </tr>
+                                        {% for detail in data %}
+                                            <tr>
+                                                <td>{{detail.product_id}}</td>
+                                                <td>{{detail.product_category_id}}</td>
+                                                <td>{{detail.quantity}}</td>
+                                                <td>{{detail.price}}</td>
+                                                <td>{{detail.selling_price}}</td>
+
+<!--                                                <td><a class="btn btn-sm btn-info" href="">Update</a></td>-->
+<!--                                                <td><a class="btn btn-sm btn-danger" href="{% url 'VendorStockUpdateDeleteView' detail.id %}">Cancel</a></td>-->
+                                            </tr>
+                                        {% endfor%}
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+
+					</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+{% endblock content %}
